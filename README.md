@@ -1,4 +1,6 @@
-You probably don't want to use this. I spent a few minutes writing the most naive possible fuzzer, to see if it would turn up any bugs, and it's found more bugs than I have time to debug. However, the general approach and the specific implementation are pretty lame.
+You probably don't want to use this. I spent a few minutes writing the most naive possible fuzzer, to see if it would turn up any bugs. Turns out, this terrible method can generate bugs faster than I can debug them. However, the general approach and the specific implementation are pretty lame. If you're looking at this, you probably want something like [Csmith](http://embed.cs.utah.edu/csmith/) or [jsfunfuzz](https://bugzilla.mozilla.org/show_bug.cgi?id=jsfunfuzz).
+
+I'm planning to, eventually, write a real fuzzer to see if something that generates random expressions turns up more bugs than this. Suggestions / pull requests welcome.
 
 ### Confirmed/debugged bugs
 
@@ -36,7 +38,7 @@ deprecated syntax warning shows up with non-sensical line number and sometimes n
 
 ### Odd non-bugs
 
-[Inconsistent handling of some operators](https://groups.google.com/forum/#!topic/julia-users/ljQ-nHpXitU)
+[Special casing of some operators](https://groups.google.com/forum/#!topic/julia-users/ljQ-nHpXitU)
 
 Address space randomiziation causes some methods to be randomized across invocations of julia.
 
