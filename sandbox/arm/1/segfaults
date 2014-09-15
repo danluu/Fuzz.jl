@@ -1,0 +1,58 @@
+
+speye(...)
+Program received signal SIGSEGV, Segmentation fault.
+0xb44195a8 in julia_vcat58406 () at range.jl:512
+512     range.jl: No such file or directory.
+(gdb) bt
+#0  0xb44195a8 in julia_vcat58406 () at range.jl:512
+#1  0xb4419224 in julia_speye58405 () at sparse/sparsematrix.jl:417
+#2  0xb4419048 in julia_speye58404 () at sparse/sparsematrix.jl:409
+#3  0xb4419078 in jlcall_speye58404 ()
+#4  0xb61c9fa0 in jl_apply (f=0x3e0a5d0, args=0xbeffd894, nargs=1) at julia.h:987
+#5  0xb61cca82 in jl_trampoline (F=0x3e0a5d0, args=0xbeffd894, nargs=1) at builtins.c:820
+#6  0xb61c2be4 in jl_apply (f=0x3e0a5d0, args=0xbeffd894, nargs=1) at julia.h:987
+#7  0xb61c620c in jl_apply_generic (F=0x5b6200, args=0xbeffd894, nargs=1) at gf.c:1592
+#8  0xb623b01c in jl_apply (f=0x5b6200, args=0xbeffd894, nargs=1) at julia.h:987
+#9  0xb623b414 in do_call (f=0x5b6200, args=0x3e16660, nargs=1, locals=0x0, nl=0) at interpreter.c:65
+#10 0xb623bd78 in eval (e=0x3e0a5c0, locals=0x0, nl=0) at interpreter.c:207
+#11 0xb623b146 in jl_interpret_toplevel_expr (e=0x3e0a5c0) at interpreter.c:25
+#12 0xb624d6c4 in jl_toplevel_eval_flex (e=0x3e0a560, fast=1) at toplevel.c:496
+#13 0xb624d7fc in jl_toplevel_eval (v=0x3e0a560) at toplevel.c:519
+#14 0xb61cb572 in jl_f_top_eval (F=0x1761d90, args=0xbeffde50, nargs=1) at builtins.c:425
+#15 0xb49dd444 in julia_bogus58033 () at /home/danluu/dev/Fuzz.jl/fuzz.jl:57
+#16 0xb49dd158 in julia_try_bogus58032 () at /home/danluu/dev/Fuzz.jl/fuzz.jl:168
+
+
+../../src/mul.c:295: MPFR assertion failed: (mpfr_uprec_t) bq + cq <= ((mpfr_prec_t)((mpfr_uprec_t)(~(mpfr_uprec_t)0)>>1))
+
+Program received signal SIGABRT, Aborted.
+__libc_do_syscall () at ../ports/sysdeps/unix/sysv/linux/arm/libc-do-syscall.S:44
+44      ../ports/sysdeps/unix/sysv/linux/arm/libc-do-syscall.S: No such file or directory.
+(gdb) bt
+#0  __libc_do_syscall () at ../ports/sysdeps/unix/sysv/linux/arm/libc-do-syscall.S:44
+#1  0xb6040f0e in __GI_raise (sig=sig@entry=6) at ../nptl/sysdeps/unix/sysv/linux/raise.c:56
+#2  0xb6043766 in __GI_abort () at abort.c:89
+#3  0xb460f8b0 in mpfr_assert_fail () from /usr/lib/arm-linux-gnueabihf/libmpfr.so
+#4  0xb45f7a9c in mpfr_mul () from /usr/lib/arm-linux-gnueabihf/libmpfr.so
+#5  0xb4612698 in ?? () from /usr/lib/arm-linux-gnueabihf/libmpfr.so
+
+
+isqrt(big(-139340387719415954254945575146440495464)
+Program received signal SIGFPE, Arithmetic exception.
+__libc_do_syscall () at ../ports/sysdeps/unix/sysv/linux/arm/libc-do-syscall.S:44
+44      ../ports/sysdeps/unix/sysv/linux/arm/libc-do-syscall.S: No such file or directory.
+(gdb) bt
+#0  __libc_do_syscall () at ../ports/sysdeps/unix/sysv/linux/arm/libc-do-syscall.S:44
+#1  0xb6040f0e in __GI_raise (sig=8) at ../nptl/sysdeps/unix/sysv/linux/raise.c:56
+#2  0xb466ec6a in ?? () from /usr/lib/arm-linux-gnueabihf/libgmp.so
+Backtrace stopped: previous frame identical to this frame (corrupt stack?)
+
+isqrt(big(-52755556568732380309920652805844950957))
+Program received signal SIGFPE, Arithmetic exception.
+__libc_do_syscall () at ../ports/sysdeps/unix/sysv/linux/arm/libc-do-syscall.S:44
+44      ../ports/sysdeps/unix/sysv/linux/arm/libc-do-syscall.S: No such file or directory.
+(gdb) bt
+#0  __libc_do_syscall () at ../ports/sysdeps/unix/sysv/linux/arm/libc-do-syscall.S:44
+#1  0xb6040f0e in __GI_raise (sig=8) at ../nptl/sysdeps/unix/sysv/linux/raise.c:56
+#2  0xb466ec6a in ?? () from /usr/lib/arm-linux-gnueabihf/libgmp.so
+Backtrace stopped: previous frame identical to this frame (corrupt stack?)
