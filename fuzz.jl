@@ -12,8 +12,8 @@ function banned_name(name)
     name == :writedlm || name == :mv || name == :rm || name == :tmpdir ||
     name == :mktmpdir || name == :cd || name == :mkpath || name == :evalfile ||
     name == :ndigits || # issue #8266
-    name == :displayable || # causes a hard to reproduce hang
-    name == :peakflops || # causes hard to reproduce core dump
+#    name == :displayable || # causes a hard to reproduce hang
+    name == :blas_set_num_threads || # issue #8329
     name == :$ || name == :& || name == :(::) || # can't invoke fns that are also special unary operators
     name == :binomial || # takes too long with a rand BigInt. TODO: make value depend on name
     name == :^ || # issue #8286
@@ -163,6 +163,8 @@ end
 
 function try_bogus()
     fn_log = open("log","w")
+    (err_in, err_out) = redirect_stderr()
+    close(err_out)
     while true
         try
             bogus(fn_log)

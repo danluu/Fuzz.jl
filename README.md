@@ -4,6 +4,16 @@ I'm planning to, eventually, write a real fuzzer to see if something that genera
 
 ### Confirmed/debugged bugs
 
+[8353: parser loses track of location when `parse` is called](https://github.com/JuliaLang/julia/issues/8353)
+
+[8352: underspecified type for writemime](https://github.com/JuliaLang/julia/pull/8352)
+
+[8341: EOF mixed up in unicode hangs parser](https://github.com/JuliaLang/julia/issues/8341)
+
+[8329: changing number of BLAS threads before operation causes segfault](https://github.com/JuliaLang/julia/issues/8329)
+
+[8302: array sized incorrectly](https://github.com/JuliaLang/julia/pull/8302)
+
 [8286: exponent of large number causes crashes with SIGABRT](https://github.com/JuliaLang/julia/issues/8286)
 
 [8277: code near exception incorrectly optimized out](https://github.com/JuliaLang/julia/issues/8277)
@@ -24,17 +34,12 @@ ERROR: error compiling searchindex: error compiling _searchindex: cannot convert
  in searchindex at string.jl:307
 ~~~
 
-`sprandn` with bad args can take an arbitrary long time before erroring out.
+`sprandn` with bad args can take an arbitraily long time before erroring out.
 
 `displayable` psuedo-randomly hangs.
 
-`peakflops` segfaults.
-
-deprecated syntax warning shows up with non-sensical line number and sometimes non-sensical source file.
-
 `addprocs` of negative `Int128` causes something crazy to happen.
 
-`Array(Int, some_int128_var)` doesn't work correctly.
 
 ### Odd non-bugs
 
