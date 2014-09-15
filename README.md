@@ -40,6 +40,8 @@ ERROR: error compiling searchindex: error compiling _searchindex: cannot convert
 
 `addprocs` of negative `Int128` causes something crazy to happen.
 
+`replace` on string containing bad characters errors out instead of skipping past bad character. See `sandbox/3`.
+
 
 ### Odd non-bugs
 
