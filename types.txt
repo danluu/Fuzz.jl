@@ -1,0 +1,4 @@
+# Missing many.
+Any: String, Char, Symbol, Int, Uint128, Uint64, Uint32, Uint16, Uint8, Int128, Int64, Int32, Int16, Int8, Float16, Float32, Float64, Integer, Unsigned, Signed, BigInt, Bool, Float32, Number, FloatingPoint
+# Missing 
+Real: FloatingPoint, Integer

@@ -1,0 +1,36 @@
+touch
+edit
+download
+less
+symlink
+kill
+mkdir
+cp
+writedlm
+mv
+rm
+tmpdir
+mktmpdir
+cd
+mkpath
+evalfile
+blas_set_num_threads # issue 8329
+$ # need to do something different to invoke special unary operator
+& # need to do something different to invoke special unary operator
+:: # need to do something different to invoke special unary operator
+binomial # takes to long with rand BigInt. TODO: allow variable to depend on function
+^ # issue 8586
+open # TODO: only give it opens that don't create files
+versioninfo # uinteresting and produces a lot of output
+bessely # too slow unless arg sizes are limited
+sprandn # hang bug
+readlines # defaults to STDIN, which will cause the fuzzer to hang
+<< # often slow with large shifts
+produce # will hang if called directly
+poll_fd
+poll_file
+c_malloc
+c_calloc
+c_realloc
+sleep
+addprocs # TODO: enable this in a limited fashion.
