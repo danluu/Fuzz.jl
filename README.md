@@ -1,4 +1,4 @@
-You probably don't want to use this. I spent a few minutes writing the most naive possible fuzzer, to see if it would turn up any bugs. Turns out, this terrible method can generate bugs faster than I can debug them. However, the general approach and the specific implementation are pretty lame. If you're looking at this, you probably want something like [Csmith](https://github.com/csmith-project/csmith) or [jsfunfuzz](https://bugzilla.mozilla.org/show_bug.cgi?id=jsfunfuzz).
+You probably don't want to use this. I spent a few minutes writing the most naive possible fuzzer, to see if it would turn up any bugs. Turns out, this terrible method can generate bugs faster than I can debug them. However, the general approach and the specific implementation are pretty lame. If you're looking at this, you probably want something like [Csmith](https://github.com/csmith-project/csmith) or [jsfunfuzz](https://github.com/MozillaSecurity/funfuzz).
 
 I'm planning to, eventually, write a real fuzzer to see if something that generates random expressions turns up more bugs than this. Suggestions / pull requests welcome.
 
